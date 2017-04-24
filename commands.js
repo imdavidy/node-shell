@@ -7,14 +7,14 @@ module.exports = {
   date: function(firstReturn, done) {
     done(String(new Date()));
   },
-  ls: function() {
+  ls: function(firstReturn, done) {
     fs.readdir('.', function(err, files) {
-      var files = '';
+      var filesStr = '';
       if (err) throw err;
       files.forEach(function(file) {
-        files += file.toString() + " ";
+        filesStr += file.toString() + " ";
       });
-      done(files);
+      done(filesStr);
     });
   },
   echo: function(array) {

@@ -6,7 +6,7 @@ process.stdout.write('prompt > ');
 process.stdin.on('data', function (data) {
   var cmd = data.toString().trim().split(' '); // remove the newline
   function done(output) {
-    process.stdout.write(output);
+    process.stdout.write(output + '\n');
     process.stdout.write('prompt > ');
   }
   commands[cmd[0]](cmd.slice(1), done);
